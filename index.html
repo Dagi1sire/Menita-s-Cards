@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menita's Cards</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+    <h1>Menita's Cards</h1>
+    <button class="menu-toggle" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <nav class="nav-menu">
+        <ul>
+                <li><a href="index.html" class="active"><i class="fas fa-home"></i>  Home</a></li>
+                <li><a href="our-work.html"><i class="fas fa-briefcase"></i>  Our Work</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i>  Contact</a></li>
+                <li><a href="order.html"><i class="fas fa-shopping-cart"></i>  Submit Order</a></li>
+        </ul>
+    </nav>
+</header>
+    
+    <main>
+        <section class="hero">
+            <h2>Empowering Learning, One Card at a Time</h2>
+            <p>Your Creative Partner for Effective Educational Tools</p>
+            <div class="cta-container">
+            <a class="cta primary" href="order.html">Get Started</a>
+            <a href="our-work.html" class="cta secondary">Learn More</a>
+            </div>
+        </section>
+
+
+    <div>
+
+        <section class="ourservices">
+            <div class="ourservice">
+            <h3>Our Services</h3>
+            </div>
+            </section>
+        
+        <section class="services">
+
+            <div class="service-card">
+                <i class="fas fa-puzzle-piece"></i>
+                <h3>Flashcards for ASD</h3>
+                <p>We specialize in designing educational flashcards for children with Autism Spectrum Disorder (ASD). Our flashcards are created to foster engagement, enhance learning, and provide a fun, interactive experience for children.</p>
+            </div>
+        
+            <div class="service-card">
+                <i class="fas fa-paint-brush"></i>
+                <h3>Custom Flashcard Design</h3>
+                <p>Looking for tailored learning tools? We offer custom-designed flashcards to suit specific educational needs, providing unique designs that cater to individual learning styles and requirements.</p>
+            </div>
+        
+            <div class="service-card">
+                <i class="fas fa-images"></i>
+                <h3>Visual Learning Tools</h3>
+                <p>Our visual learning tools are designed to help children grasp concepts through images, colors, and patterns, supporting their cognitive and emotional development in a creative way.</p>
+            </div>
+        
+        </section>
+        
+    </div>
+
+        <section class="about">
+            <h3>About Us</h3>
+            <p>At Menita's Cards, we empower businesses to build a strong and impactful online presence through creative design solutions and strategic marketing. Our specialized services also include creating educational flashcards that support learning for children with Autism Spectrum Disorder (ASD), fostering growth and confidence in their learning journeys.</p>
+        </section>
+
+        <section class="portfolio">
+            <h3>Our Work</h3>
+            <p>Check out our portfolio to see our best projects.</p>
+            <a class="cta" href="our-work.html">View Our Work</a>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 Menita's Cards. All rights reserved.</p>
+        </footer>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const menuToggle = document.querySelector('.menu-toggle');
+                const navMenu = document.querySelector('.nav-menu');
+    
+                menuToggle.addEventListener('click', function() {
+                    menuToggle.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                });
+    
+                // Close menu when clicking a link
+                document.querySelectorAll('.nav-menu a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        menuToggle.classList.remove('active');
+                        navMenu.classList.remove('active');
+                    });
+                });
+            });
+        </script>
+
+    </main>
+</body>
+</html>
