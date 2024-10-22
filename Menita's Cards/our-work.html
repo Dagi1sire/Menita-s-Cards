@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Work - Menita's Cards</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Menita's Cards</h1>
+        <button class="menu-toggle" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i>  Home</a></li>
+                <li><a href="our-work.html" class="active"><i class="fas fa-briefcase"></i>  Our Work</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i>  Contact</a></li>
+                <li><a href="order.html"><i class="fas fa-shopping-cart"></i>  Submit Order</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="our-work">
+            <h2>Our Work</h2>
+            <p>Explore our portfolio of successful projects that showcase our creativity and effectiveness.</p>
+            <div class="portfolio-item">
+                <h3>Project Title 1</h3>
+                <p>Short description of the project.</p>
+            </div>
+            <div class="portfolio-item">
+                <h3>Project Title 2</h3>
+                <p>Short description of the project.</p>
+            </div>
+            <div class="portfolio-item">
+                <h3>Project Title 3</h3>
+                <p>Short description of the project.</p>
+            </div>
+            <div class="portfolio-item">
+                <h3>Project Title 4</h3>
+                <p>Short description of the project.</p>
+            </div>
+            <!-- Add more projects as needed -->
+        </section>
+
+        <footer>
+            <p>&copy; 2024 Menita's Cards. All rights reserved.</p>
+        </footer>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const menuToggle = document.querySelector('.menu-toggle');
+                const navMenu = document.querySelector('.nav-menu');
+    
+                menuToggle.addEventListener('click', function() {
+                    menuToggle.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                });
+    
+                // Close menu when clicking a link
+                document.querySelectorAll('.nav-menu a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        menuToggle.classList.remove('active');
+                        navMenu.classList.remove('active');
+                    });
+                });
+            });
+        </script>
+
+    </main>
+</body>
+</html>
