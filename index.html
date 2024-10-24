@@ -18,8 +18,8 @@
     <nav class="nav-menu">
         <ul>
                 <li><a href="index.html" class="active"><i class="fas fa-home"></i>  Home</a></li>
-                <li><a href="our-work.html"><i class="fas fa-briefcase"></i>  Our Work</a></li>
-                <li><a href="contact.html"><i class="fas fa-envelope"></i>  Contact</a></li>
+                <li><a href="#our-work"><i class="fas fa-briefcase"></i>  Our Work</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i>  Contact</a></li>
                 <li><a href="order.html"><i class="fas fa-shopping-cart"></i>  Submit Order</a></li>
         </ul>
     </nav>
@@ -68,16 +68,47 @@
         
     </div>
 
-        <section class="about">
-            <h3>About Us</h3>
-            <p>At Menita's Cards, we empower businesses to build a strong and impactful online presence through creative design solutions and strategic marketing. Our specialized services also include creating educational flashcards that support learning for children with Autism Spectrum Disorder (ASD), fostering growth and confidence in their learning journeys.</p>
+        <section class="our-work" id="our-work">
+            <h2>Our Work</h2>
+            <p>Explore our portfolio of successful projects that showcase our creativity and effectiveness.</p>
+            <div class="portfolio-item">
+                <h3>Project Title 1</h3>
+                <p>Short description of the project.</p>
+            </div>
+            <div class="portfolio-item">
+                <h3>Project Title 2</h3>
+                <p>Short description of the project.</p>
+            </div>
+            <div class="portfolio-item">
+                <h3>Project Title 3</h3>
+                <p>Short description of the project.</p>
+            </div>
+            <div class="portfolio-item">
+                <h3>Project Title 4</h3>
+                <p>Short description of the project.</p>
+            </div>
+            <!-- Add more projects as needed -->
         </section>
 
-        <section class="portfolio">
-            <h3>Our Work</h3>
-            <p>Check out our portfolio to see our best projects.</p>
-            <a class="cta" href="our-work.html">View Our Work</a>
+
+        <section class="contact" id="contact">
+            <h2>Contact Us</h2>
+            <p>Have questions about our services? We'd love to hear from you!</p>
+            <form action="https://example.com/your-google-form-link" method="GET">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                
+                <button type="submit">Send Message</button>
+            </form>
         </section>
+
+        </div>
 
         <footer>
             <p>&copy; 2024 Menita's Cards. All rights reserved.</p>
