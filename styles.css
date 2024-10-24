@@ -1,5 +1,6 @@
 /* Global Styles */
 body {
+    scroll-behavior: smooth;
     font-family: 'Helvetica Neue', Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -19,6 +20,14 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+main {
+    scroll-behavior: smooth;
 }
 
 /* Hamburger Menu Button */
@@ -437,7 +446,7 @@ footer p {
 nav a.active {
     color: #1abc9c; /* Light Green */
     font-weight: bold;
-    text-decoration: underline; /* Optional: adds an underline */
+    text-decoration: none; /* Optional: adds an underline */
     transform: scale(1.1); /* Optional: makes the active link larger */
 }
 

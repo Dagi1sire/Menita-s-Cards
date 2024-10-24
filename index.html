@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+<section class="home" id="home"></section>
 <body>
     <header>
     <h1>Menita's Cards</h1>
@@ -17,7 +18,7 @@
     </button>
     <nav class="nav-menu">
         <ul>
-                <li><a href="index.html" class="active"><i class="fas fa-home"></i>  Home</a></li>
+                <li><a href="#home" class="active"><i class="fas fa-home"></i>  Home</a></li>
                 <li><a href="#our-work"><i class="fas fa-briefcase"></i>  Our Work</a></li>
                 <li><a href="#contact"><i class="fas fa-envelope"></i>  Contact</a></li>
                 <li><a href="order.html"><i class="fas fa-shopping-cart"></i>  Submit Order</a></li>
@@ -26,26 +27,26 @@
 </header>
     
     <main>
-        <section class="hero">
+        <section class="hero" id="hero">
             <h2>Empowering Learning, One Card at a Time</h2>
             <p>Your Creative Partner for Effective Educational Tools</p>
             <div class="cta-container">
             <a class="cta primary" href="order.html">Get Started</a>
-            <a href="our-work.html" class="cta secondary">Learn More</a>
+            <a href="#ourservices" class="cta secondary">Learn More</a>
             </div>
         </section>
 
 
     <div>
 
-        <section class="ourservices">
+        <section class="ourservices" id="ourservices">
             <div class="ourservice">
             <h3>Our Services</h3>
             </div>
-            </section>
+        </section>
         
         <section class="services">
-
+            
             <div class="service-card">
                 <i class="fas fa-puzzle-piece"></i>
                 <h3>Flashcards for ASD</h3>
@@ -133,6 +134,55 @@
                 });
             });
         </script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const homeLink = document.querySelector('a[href="#home"]');
+
+        homeLink.addEventListener('click', function(e) {
+            e.preventDefault();  // Prevent default anchor behavior
+            window.scrollTo({ top: 0, behavior: 'smooth' });  // Scroll smoothly to the top
+        });
+    });
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Cache the navigation links
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        const sections = document.querySelectorAll('section');
+
+        // Function to remove active class from all nav links
+        function removeActiveClasses() {
+            navLinks.forEach(link => link.classList.remove('active'));
+        }
+
+        // Function to add active class to the current nav link
+        function activateNavLink() {
+            let currentSection = '';
+
+            // Loop through sections to find the current section in the viewport
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - sectionHeight / 3) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+
+            // Remove the active class from all links and add it to the current one
+            removeActiveClasses();
+            if (currentSection) {
+                document.querySelector(`.nav-menu a[href="#${currentSection}"]`).classList.add('active');
+            }
+        }
+
+        // Add scroll event listener
+        window.addEventListener('scroll', activateNavLink);
+    });
+</script>
+
+
 
     </main>
 </body>
