@@ -78,7 +78,7 @@ header {
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 .nav-menu a:hover {
@@ -341,7 +341,9 @@ p {
 }
 
 .our-work {
-    padding: 40px 20px;
+    background: linear-gradient(to bottom, #0a1f35, #029980); /* Adjust colors as needed */
+    padding: 20px;
+    color: white;
 }
 
 .our-work h2 {
@@ -358,8 +360,9 @@ p {
 
 /* Contact Section Styles */
 .contact {
-    padding: 40px 20px;
-    background-color : gradient(to bottom, #248cfa, #0acfae);
+    background: linear-gradient(to bottom, #029980, #0a1f35); /* Adjust colors as needed */
+    padding: 20px;
+    color: white;
 }
 
 .contact h2 {
@@ -382,6 +385,7 @@ form {
 }
 
 label {
+    color: #333;
     display: block;
     margin: 10px 0 5px;
     font-weight: bold;
