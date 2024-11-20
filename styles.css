@@ -267,16 +267,14 @@ nav a:hover::after {
 }
 
 /* About Section Styles */
-.about, .services, .portfolio {
+.about, .portfolio {
     padding: 40px 20px;
     text-align: center;
 }
 
-.services {
-    background: linear-gradient(to bottom, #029980, #0a1f35); /* Green Gradient */
-}
 
 .service-card i {
+    padding-top: 10px;
     font-size: 2.5rem;
     margin-bottom: 1rem;
     color: white; /* White */
@@ -306,6 +304,7 @@ nav a:hover::after {
 }
 
 p {
+    align-self: center;
     display: block;
     margin-block-start: 1em;
     margin-block-end: 1em;
@@ -318,7 +317,7 @@ p {
 
 /* Services Section Styles */
 .ourservices {
-    background-color: #029980;
+    background: linear-gradient(to bottom, #029980, #0a1f35); /* Adjust colors as needed */
     position: center;
     color: #fff;
     padding: 40px 50px;
@@ -330,28 +329,66 @@ p {
     padding-top: 0px;
 }
 
+/* Stacked cards container */
 .services {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: -80px;
+    text-align: center;
+    position: relative;
+    background: linear-gradient(to bottom, #0a1f35, #029980); /* Adjust colors as needed */
+    width: 300px; /* Adjust as needed */
+    height: 400px; /* Adjust as needed */
+    margin: 50px auto; /* Center container */
+    perspective: 1000px; /* For 3D effect */
 }
 
+/* Individual card styles */
 .service-card {
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
     background: linear-gradient(to bottom, #248cfa, #0acfae);
     border: 1px solid #ddd;
     border-radius: 10px;
-    margin: 15px;
-    padding: 20px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 250px;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    transform-origin: center;
 }
 
-.service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+/* Stacked effect (z-index for order) */
+.service-card:nth-child(1) {
+    z-index: 3;
+    transform: translateY(0);
 }
+
+.service-card:nth-child(2) {
+    z-index: 2;
+    transform: translateY(15px);
+}
+
+.service-card:nth-child(3) {
+    z-index: 1;
+    transform: translateY(30px);
+}
+
+/* Hover effect */
+.services:hover .service-card {
+    opacity: 1;
+    transform: rotateY(20deg) translateY(-50px) scale(1.05);
+}
+
+.services:hover .service-card:nth-child(1) {
+    transform: rotateY(0deg) translate(0px, 0px) scale(1.14);
+}
+
+.services:hover .service-card:nth-child(2) {
+    transform: rotateY(-6deg) translate(-350px, 10px) scale(1.14);
+}
+
+.services:hover .service-card:nth-child(3) {
+    transform: rotateY(6deg) translate(350px, 10px) scale(1.14);
+}
+
+
 
 .our-work {
     background: linear-gradient(to bottom, #0a1f35, #029980); /* Adjust colors as needed */
@@ -391,7 +428,7 @@ p {
 form {
     max-width: 600px;
     margin: auto;
-    background: #01dfba;
+    background: #26a590;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -414,11 +451,11 @@ input, textarea {
 }
 
 input:focus, textarea:focus {
-    border-color: #1abc9c; /* Light Green */
+    border-color: #007c63; /* Light Green */
 }
 
 button {
-    background: #1abc9c; /* Green */
+    background: #0b7e67; /* Green */
     color: #fff;
     padding: 12px;
     border: none;
