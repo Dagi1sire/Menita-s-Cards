@@ -5,7 +5,10 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    background-color: #029980;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: #0a1f35;
     color: #333;
 }
 
@@ -315,6 +318,7 @@ p {
 
 /* Services Section Styles */
 .ourservices {
+    background-color: #029980;
     position: center;
     color: #fff;
     padding: 40px 50px;
@@ -387,7 +391,7 @@ p {
 form {
     max-width: 600px;
     margin: auto;
-    background: #fff;
+    background: #01dfba;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -485,7 +489,7 @@ iframe {
 /* Oreder Page Styles */
 
 .order {
-    background-color: gradient(to bottom, #248cfa, #0acfae);
+    background-color: gradient(to bottom, #034185, #014b3e);
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
