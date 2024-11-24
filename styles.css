@@ -74,6 +74,19 @@ main {
     margin: 0 20px;
 }
 
+.nav-menu li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+:only-child .nav-menu li #order {
+    background: #050031; 
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+
 .nav-menu li :hover {
     color: #1abc9c;
 }
@@ -317,27 +330,29 @@ p {
 
 /* Services Section Styles */
 .ourservices {
-    background: linear-gradient(to bottom, #029980, #0a1f35); /* Adjust colors as needed */
+    background: linear-gradient(to bottom, #029980, #0a1f35);
     position: center;
     color: #fff;
-    padding: 40px 50px;
+    padding: 40px 20px; /* Reduced padding for smaller screens */
+    margin-left: 10;
 }
 
 .ourservices h3 {
-    color: #ffffff; /* White */
+    color: #ffffff;
     font-size: 25px;
     padding-top: 0px;
+    text-align: left;
 }
 
 /* Stacked cards container */
 .services {
     text-align: center;
     position: relative;
-    background: linear-gradient(to bottom, #0a1f35, #029980); /* Adjust colors as needed */
-    width: 300px; /* Adjust as needed */
-    height: 400px; /* Adjust as needed */
-    margin: 50px auto; /* Center container */
-    perspective: 1000px; /* For 3D effect */
+    background: linear-gradient(to bottom, #0a1f35, #029980, #0a1f35);
+    width: 300px;
+    min-height: 400px;
+    margin: 50px auto;
+    perspective: 1000px;
 }
 
 /* Individual card styles */
@@ -350,14 +365,22 @@ p {
     border: 1px solid #ddd;
     border-radius: 10px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.5s ease, opacity 0.5s ease;
-    transform-origin: center;
+    transition: all 0.5s ease;
+    padding: 20px;
+    backface-visibility: hidden;
 }
 
-/* Stacked effect (z-index for order) */
+.service-card p {
+    color: #ffffff;
+    padding-left: 7%;
+    padding-right: 7%;
+}
+
+/* Default stacked position */
 .service-card:nth-child(1) {
     z-index: 3;
     transform: translateY(0);
+    animation: fadeIn 0.5s ease;
 }
 
 .service-card:nth-child(2) {
@@ -370,24 +393,79 @@ p {
     transform: translateY(30px);
 }
 
-/* Hover effect */
-.services:hover .service-card {
-    opacity: 1;
-    transform: rotateY(20deg) translateY(-50px) scale(1.05);
+/* Hover effect for larger screens */
+@media (min-width: 1024px) {
+    .services:hover .service-card {
+        opacity: 1;
+        transform: rotateY(20deg) translateY(-50px) scale(1.05);
+    }
+
+    .services:hover .service-card:nth-child(1) {
+        transform: rotateY(0deg) translate(0px, 0px) scale(1.14);
+    }
+
+    .services:hover .service-card:nth-child(2) {
+        transform: rotateY(-6deg) translate(-350px, 10px) scale(1.14);
+    }
+
+    .services:hover .service-card:nth-child(3) {
+        transform: rotateY(6deg) translate(350px, 10px) scale(1.14);
+    }
 }
 
-.services:hover .service-card:nth-child(1) {
-    transform: rotateY(0deg) translate(0px, 0px) scale(1.14);
+/* Responsive styles for smaller screens */
+@media (max-width: 1023px) {
+    .services {
+        height: auto;
+        min-height: unset;
+        perspective: none;
+        margin: 20px auto;
+    }
+
+    .service-card {
+        position: relative;
+        margin-bottom: 20px;
+        transform: none !important;
+        opacity: 1 !important;
+        height: auto;
+        min-height: 200px;
+    }
+
+    .service-card:nth-child(1),
+    .service-card:nth-child(2),
+    .service-card:nth-child(3) {
+        transform: none;
+        margin: 20px 0;
+    }
+
+    /* Reset hover effects for mobile */
+    .services:hover .service-card,
+    .services:hover .service-card:nth-child(1),
+    .services:hover .service-card:nth-child(2),
+    .services:hover .service-card:nth-child(3) {
+        transform: none;
+        opacity: 1;
+    }
 }
 
-.services:hover .service-card:nth-child(2) {
-    transform: rotateY(-6deg) translate(-350px, 10px) scale(1.14);
-}
+/* Additional mobile optimizations */
+@media (max-width: 480px) {
+    .ourservices {
+        padding: 20px 10px;
+    }
 
-.services:hover .service-card:nth-child(3) {
-    transform: rotateY(6deg) translate(350px, 10px) scale(1.14);
-}
+    .services {
+        width: 90%;
+    }
 
+    .service-card {
+        padding: 15px;
+    }
+
+    .service-card h3 {
+        font-size: 20px;
+    }
+}
 
 
 .our-work {
@@ -545,3 +623,185 @@ iframe {
     color: #ffffff;
 }
 
+
+
+
+.text-content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: rgb(255, 193, 59);
+    text-shadow: 2px 1px 5px crimson;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    letter-spacing: 2px;
+}
+ 
+.text-content h1{
+    font-size: 4rem;
+}
+ 
+.text-content p{
+    font-size: 1.2rem;
+    font-style: italic;
+    font-weight: lighter;
+    width: 80%;
+}
+ 
+
+.particle-container .particle {
+    position: absolute;
+    height: 20px; /* Adjust size as needed */
+    width: 20px;  /* Adjust size as needed */
+    filter: drop-shadow(0 0 5px rgba(168, 209, 204, 0.534));
+}
+
+/* Individual puzzle piece positions and animations */
+.particle-container .particle:nth-child(1){
+    top: 12%;
+    left: 42%;
+    animation: puzzle-float 10s linear infinite;
+}
+ 
+.particle-container .particle:nth-child(2){
+    top: 70%;
+    left: 50%;
+    animation: puzzle-float 7s linear infinite;
+}
+.particle-container .particle:nth-child(3){
+    top: 17%;
+    left: 6%;
+    animation: puzzle-float 9s linear infinite;
+}
+.particle-container .particle:nth-child(4){
+    top: 28%;
+    left: 40%;
+    animation: puzzle-float 10s linear infinite;
+}
+.particle-container .particle:nth-child(5){
+    top: 67%;
+    left: 10%;
+    animation: puzzle-float 6s linear infinite;
+}
+.particle-container .particle:nth-child(6){
+    top: 80%;
+    left: 70%;
+    animation: puzzle-float 11s linear infinite;
+}
+.particle-container .particle:nth-child(7){
+    top: 60%;
+    left: 80%;
+    animation: puzzle-float 6s linear infinite;
+}
+.particle-container .particle:nth-child(8){
+    top: 65%;
+    left: 25%;
+    animation: puzzle-float 6s linear infinite;
+}
+.particle-container .particle:nth-child(9){
+    top: 90%;
+    left: 25%;
+    animation: puzzle-float 9s linear infinite;
+}
+.particle-container .particle:nth-child(10){
+    top: 30%;
+    left: 80%;
+    animation: puzzle-float 5s linear infinite;
+}
+ 
+.particle-container .particle:nth-child(11){
+    top: 24%;
+    left: 82%;
+    animation: puzzle-float 10s linear infinite;
+}
+ 
+.particle-container .particle:nth-child(12){
+    top: 97%;
+    left: 5%;
+    animation: puzzle-float 7s linear infinite;
+}
+.particle-container .particle:nth-child(13){
+    top: 97%;
+    left: 60%;
+    animation: puzzle-float 9s linear infinite;
+}
+.particle-container .particle:nth-child(14){
+    top: 30%;
+    left: 35%;
+    animation: puzzle-float 5s linear infinite;
+}
+.particle-container .particle:nth-child(15){
+    top: 47%;
+    left: 55%;
+    animation: puzzle-float 7s linear infinite;
+}
+.particle-container .particle:nth-child(16){
+    top: 70%;
+    left: 60%;
+    animation: puzzle-float 8s linear infinite;
+}
+.particle-container .particle:nth-child(17){
+    top: 40%;
+    left: 30%;
+    animation: puzzle-float 10s linear infinite;
+}
+.particle-container .particle:nth-child(18){
+    top: 23%;
+    left: 15%;
+    animation: puzzle-float 4s linear infinite;
+}
+.particle-container .particle:nth-child(19){
+    top: 90%;
+    left: 90%;
+    animation: puzzle-float 5s linear infinite;
+}
+ 
+.particle-container .particle:nth-child(20){
+    top: 85%;
+    left: 95%;
+    animation: puzzle-float 7s linear infinite;
+}
+
+/* Continue with the rest of your particle positions... */
+
+@keyframes puzzle-float {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 0.8;
+    }
+    25% {
+        transform: translate(10px, -25px) rotate(90deg);
+        opacity: 0.6;
+    }
+    50% {
+        transform: translate(-10px, -50px) rotate(180deg);
+        opacity: 0.4;
+    }
+    75% {
+        transform: translate(10px, -75px) rotate(270deg);
+        opacity: 0.2;
+    }
+    100% {
+        transform: translate(0, -100px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Add a subtle hover effect */
+.particle-container .particle:hover {
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
+    transform: scale(1.2);
+    animation: backwards;
+}
+
+/* Make the animation smoother */
+.particle-container .particle {
+    transition: transform 0.3s ease;
+    will-change: transform, opacity;
+}
